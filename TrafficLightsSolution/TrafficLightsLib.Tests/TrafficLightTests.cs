@@ -12,7 +12,7 @@ namespace TrafficLightsLib.Tests
     public class TrafficLightTests
     {
         [Test]
-        public void If_Smaller_Than_20_Then_Green()
+        public void If_Smaller_Than_20_Then_Green_Test()
         {
             var tl = TrafficLightBuilder.Initalize()
                 .GreenIfValueIncludedIn(Interval<double>.Bounded(0, Edge.Closed, 20, Edge.Open))
@@ -22,9 +22,8 @@ namespace TrafficLightsLib.Tests
         }
         
         [Test]
-        public void If_Larger_Than_20_Then_Green()
+        public void If_Larger_Than_20_Then_Green_Test()
         {
-            //var tl = new TrafficLight(TrafficLightStatus.OK, Interval<double>.Bounded(20, Edge.Open, 2000, Edge.Open));
             var tl = TrafficLightBuilder.Initalize()
                 .GreenIfValueIncludedIn(Interval<double>.Bounded(20, Edge.Open, 2000, Edge.Open))
                 .Build();
@@ -34,7 +33,7 @@ namespace TrafficLightsLib.Tests
 
 
         [Test]
-        public void If_0_to_20_Green_If_20_to_40_Yellow_If_Larger_Than_40_Then_Red()
+        public void If_0_to_20_Green_If_20_to_40_Yellow_If_Larger_Than_40_Then_Red_Test()
         {
             // 0..20 => Green
             // 20..40 => Yellow
