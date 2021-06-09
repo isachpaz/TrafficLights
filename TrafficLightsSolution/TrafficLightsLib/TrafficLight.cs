@@ -9,20 +9,29 @@ namespace TrafficLightsLib
 {
     public class TrafficLight
     {
-        private readonly double _cutoff;
         
-        public TrafficLight(double cutoff)
-        {
-            _cutoff = cutoff;
+        private Dictionary<TrafficLightStatus, Interval<double>> _dict = 
+            new Dictionary<TrafficLightStatus, Interval<double>>();
 
-            //Dictionary<TrafficLightStatus, Func<Interval<>, bool>>
+        public TrafficLight()
+        {
+            
+        }
+
+        public void AddRule(TrafficLightStatus status, Interval<double> interval)
+        {
+            _dict.Add(status, interval);
         }
 
         public TrafficLightStatus CheckValue(double value)
         {
-            if (_cutoff < value)
+            foreach (var item in _dict)
             {
-                return TrafficLightStatus.OK;
+                var func = item.Value;
+                if (func.Includes(value))
+                {
+                    return item.Key;
+                }
             }
 
             return TrafficLightStatus.NOK;
