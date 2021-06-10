@@ -13,7 +13,7 @@
 		<releaseNotes>
 
 			TrafficLightLib 1.0.0:
-			- Implementation of traffic lights
+			- Generic implementation of traffic lights
         
 		</releaseNotes>
 		<copyright>Copyright 2020-2021 (c) Dr. Ilias Sachpazidis</copyright>
