@@ -47,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TrafficLightsLib\TrafficLightsLib.csproj">
+    <ProjectReference Include="..\TrafficLightsLib\TrafficLightLib.csproj">
       <Project>{315ba093-3066-41fc-bd93-ab25d1ec813e}</Project>
-      <Name>TrafficLightsLib</Name>
+      <Name>TrafficLightLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{315BA093-3066-41FC-BD93-AB25D1EC813E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TrafficLightsLib</RootNamespace>
-    <AssemblyName>TrafficLightsLib</AssemblyName>
+    <RootNamespace>TrafficLightLib</RootNamespace>
+    <AssemblyName>TrafficLightLib</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,12 +44,18 @@
     <Compile Include="TrafficLight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrafficLightBuilder.cs" />
-    <Compile Include="TrafficLightStatus.cs" />
+    <Compile Include="TrafficLightState.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="IntervalLib">
       <Version>1.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="trafficlightlib.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

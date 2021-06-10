@@ -10,23 +10,23 @@ namespace TrafficLightsLib
         {
         }
 
-        public static TrafficLightBuilder Initalize() => new TrafficLightBuilder();
+        public static TrafficLightBuilder Initialize() => new TrafficLightBuilder();
 
         public TrafficLightBuilder GreenIfValueIncludedIn(Interval<double> interval)
         {
-            _trafficLight.AddRule(TrafficLightStatus.OK, interval);
+            _trafficLight.Map(TrafficLightState.OK, interval);
             return this;
         }
 
         public TrafficLightBuilder YellowIfValueIncludedIn(Interval<double> interval)
         {
-            _trafficLight.AddRule(TrafficLightStatus.POK, interval);
+            _trafficLight.Map(TrafficLightState.POK, interval);
             return this;
         }
 
         public TrafficLightBuilder RedIfValueIncludedIn(Interval<double> interval)
         {
-            _trafficLight.AddRule(TrafficLightStatus.NOK, interval);
+            _trafficLight.Map(TrafficLightState.NOK, interval);
             return this;
         }
 

@@ -10,20 +10,20 @@ namespace TrafficLightsLib
     public class TrafficLight
     {
         
-        private Dictionary<TrafficLightStatus, Interval<double>> _dict = 
-            new Dictionary<TrafficLightStatus, Interval<double>>();
+        private Dictionary<TrafficLightState, Interval<double>> _dict = 
+            new Dictionary<TrafficLightState, Interval<double>>();
 
         public TrafficLight()
         {
             
         }
 
-        public void AddRule(TrafficLightStatus status, Interval<double> interval)
+        public void Map(TrafficLightState status, Interval<double> interval)
         {
             _dict.Add(status, interval);
         }
 
-        public TrafficLightStatus CheckValue(double value)
+        public TrafficLightState CheckValue(double value)
         {
             foreach (var item in _dict)
             {
@@ -34,7 +34,7 @@ namespace TrafficLightsLib
                 }
             }
 
-            return TrafficLightStatus.NOK;
+            return TrafficLightState.Undefined;
         }
     }
 }

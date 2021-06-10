@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>TrafficLightLib</id>
+		<version>1.0.0</version>
+		<title>TrafficLightLib</title>
+		<authors>Ilias Sachpazidis</authors>
+		<owners>Dr. Ilias Sachpazidis</owners>
+		<projectUrl>https://github.com/isachpaz/TrafficLights</projectUrl>
+		<license type="file">LICENSE.txt</license>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>TrafficLightLib</description>
+		<releaseNotes>
+
+			TrafficLightLib 1.0.0:
+			- Implementation of traffic lights
+        
+		</releaseNotes>
+		<copyright>Copyright 2020-2021 (c) Dr. Ilias Sachpazidis</copyright>
+		<tags></tags>
+
+	</metadata>
+	<files>
+		<file src="bin\Release\*.dll" target="lib\net461"/>
+		<file src="LICENSE.txt" />
+	</files>
+
+</package>

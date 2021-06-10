@@ -1,9 +1,11 @@
 ﻿namespace TrafficLightsLib
 {
-    public enum TrafficLightStatus
+    public enum TrafficLightState
     {
+        Undefined,
         OK,     // OK => Green
         POK,    // Partial OK => Yellow
-        NOK     // Not OK => Red
+        NOK,     // Not OK => Red
+        
     }
 }
