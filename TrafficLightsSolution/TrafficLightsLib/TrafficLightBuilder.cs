@@ -1,38 +1,40 @@
-﻿using IntervalLib;
+﻿using System;
+using IntervalLib;
 
 namespace TrafficLightsLib
 {
-    public class TrafficLightBuilder
+    public class TrafficLightBuilder<T> where T : struct, IComparable<T>
     {
-        TrafficLight _trafficLight = new TrafficLight();
+        TrafficLight<T> _trafficLight = new TrafficLight<T>();
 
         private TrafficLightBuilder()
         {
         }
 
-        public static TrafficLightBuilder Initialize() => new TrafficLightBuilder();
+        public static TrafficLightBuilder<T> Initialize() => new TrafficLightBuilder<T>();
 
-        public TrafficLightBuilder GreenIfValueIncludedIn(Interval<double> interval)
+        public TrafficLightBuilder<T> GreenIfValueIncludedIn(Interval<T> interval)
         {
             _trafficLight.Map(TrafficLightState.OK, interval);
             return this;
         }
 
-        public TrafficLightBuilder YellowIfValueIncludedIn(Interval<double> interval)
+        public TrafficLightBuilder<T> YellowIfValueIncludedIn(Interval<T> interval)
         {
             _trafficLight.Map(TrafficLightState.POK, interval);
             return this;
         }
 
-        public TrafficLightBuilder RedIfValueIncludedIn(Interval<double> interval)
+        public TrafficLightBuilder<T> RedIfValueIncludedIn(Interval<T> interval)
         {
             _trafficLight.Map(TrafficLightState.NOK, interval);
             return this;
         }
 
-        public TrafficLight Build()
+        public TrafficLight<T> Build()
         {
             return _trafficLight;
         }
+        
     }
 }

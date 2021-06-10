@@ -14,7 +14,7 @@ namespace TrafficLightsLib.Tests
         [Test]
         public void If_Smaller_Than_20_Then_Green_Test()
         {
-            var tl = TrafficLightBuilder.Initialize()
+            var tl = TrafficLightBuilder<double>.Initialize()
                 .GreenIfValueIncludedIn(Interval<double>.Bounded(0, Edge.Closed, 20, Edge.Open))
                 .Build();
             var status = tl.CheckValue(10);
@@ -24,7 +24,7 @@ namespace TrafficLightsLib.Tests
         [Test]
         public void If_Larger_Than_20_Then_Green_Test()
         {
-            var tl = TrafficLightBuilder.Initialize()
+            var tl = TrafficLightBuilder<double>.Initialize()
                 .GreenIfValueIncludedIn(Interval<double>.Bounded(20, Edge.Open, 2000, Edge.Open))
                 .Build();
             var status = tl.CheckValue(30);
@@ -39,7 +39,7 @@ namespace TrafficLightsLib.Tests
             // 20..40 => Yellow
             // 40..xx => Red
 
-            var tl = TrafficLightBuilder.Initialize()
+            var tl = TrafficLightBuilder<double>.Initialize()
                 .GreenIfValueIncludedIn(Interval<double>.Bounded(0, Edge.Closed, 20, Edge.Open))
                 .YellowIfValueIncludedIn(Interval<double>.Bounded(20, Edge.Closed, 40, Edge.Open))
                 .RedIfValueIncludedIn(Interval<double>.Bounded(40, Edge.Closed, Double.MaxValue, Edge.Open))
@@ -57,7 +57,7 @@ namespace TrafficLightsLib.Tests
             // 20..40 => Yellow
             // 40..50 => Red
 
-            var tl = TrafficLightBuilder.Initialize()
+            var tl = TrafficLightBuilder<double>.Initialize()
                 .GreenIfValueIncludedIn(Interval<double>.Bounded(0, Edge.Closed, 20, Edge.Open))
                 .YellowIfValueIncludedIn(Interval<double>.Bounded(20, Edge.Closed, 40, Edge.Open))
                 .RedIfValueIncludedIn(Interval<double>.Bounded(40, Edge.Closed, 50, Edge.Open))
